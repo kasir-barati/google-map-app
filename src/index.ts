@@ -1,33 +1,26 @@
 import { User } from './User';
 import { Company } from './Company';
+import { CustomMap } from './Map';
 
 let user = new User();
 let company = new Company();
 
 let mapDiv = document.getElementById('googleMap');
 
-let map = new google.maps.Map(mapDiv, {
+let map = new CustomMap(mapDiv, {
     zoom: 1,
-    center: {
+    mapCenter: {
         lat: 0,
         lng: 0,
     },
 });
 
-let userMarker = new google.maps.Marker({
-    map,
+map.createMarker({
     title: user.name,
-    position: {
-        lat: user.location.lat,
-        lng: user.location.lng,
-    },
+    position: user.location,
 });
 
-let companyMarker = new google.maps.Marker({
-    map,
+map.createMarker({
     title: company.name,
-    position: {
-        lat: company.location.lat,
-        lng: company.location.lng,
-    },
+    position: company.location,
 });
