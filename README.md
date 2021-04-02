@@ -1,8 +1,12 @@
-# GOOGLE-MAP-APP
+# TypeScript-Simple-APPs
 
 A very simple app written in [TypeScript](https://www.typescriptlang.org/)
 
 # Start the app instructions:
+
+**Note: before this you have to `git checkout` to the desired branch**
+
+**README.md contians the instructions, Therefore please read it after `git checkout`**
 
 1. `npm i`
 2. Create a new project in [console.cloud.google](https://console.cloud.google.com/apis/dashboard)
