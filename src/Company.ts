@@ -1,7 +1,8 @@
 import faker from 'faker';
+import { Mappable } from './Map';
 import { Location } from './location';
 
-export class Company {
+class Company implements Mappable {
     private _name: string;
     private _catchPhrase: string;
     private _location: {
@@ -45,3 +46,5 @@ export class Company {
         return this.location;
     }
 }
+
+export { Company };

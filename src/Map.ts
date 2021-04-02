@@ -43,4 +43,4 @@ class CustomMap {
     }
 }
 
-export { CustomMap };
+export { CustomMap, Mappable };

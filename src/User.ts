@@ -1,7 +1,8 @@
 import faker from 'faker';
+import { Mappable } from './Map';
 import { Location } from './location';
 
-export class User {
+class User implements Mappable {
     private _name: string;
     private _location: Location;
 
@@ -36,3 +37,5 @@ export class User {
         return this.location;
     }
 }
+
+export { User };
