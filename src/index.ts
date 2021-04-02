@@ -18,9 +18,11 @@ let map = new CustomMap(mapDiv, {
 map.createMarker({
     title: user.name,
     position: user.location,
+    info: user.userInfo(),
 });
 
 map.createMarker({
     title: company.name,
     position: company.location,
+    info: company.companyInfo(),
 });

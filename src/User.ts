@@ -19,4 +19,11 @@ export class User {
     public get location(): { lat: number; lng: number } {
         return this._location;
     }
+
+    public userInfo(): string {
+        return `
+            Hi.
+            The user name is: ${this._name}.
+        `;
+    }
 }

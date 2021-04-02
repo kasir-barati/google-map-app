@@ -24,4 +24,15 @@ export class Company {
     public get location(): { lat: number; lng: number } {
         return this._location;
     }
+
+    public get catchPhrase(): string {
+        return this._catchPhrase;
+    }
+
+    public companyInfo(): string {
+        return `
+            Company name: ${this._name}.
+            Company catch phrase: ${this._catchPhrase}.
+        `;
+    }
 }

@@ -1,3 +1,9 @@
+interface MarkerConfig {
+    info: string;
+    title: string;
+    position: { lat: number; lng: number };
+}
+
 class CustomMap {
     private _googleMapInstance: google.maps.Map;
 
@@ -19,16 +25,19 @@ class CustomMap {
         });
     }
 
-    createMarker(configs: {
-        title: string;
-        position: { lat: number; lng: number };
-    }) {
-        const { title, position } = configs;
-
-        new google.maps.Marker({
+    createMarker(configs: MarkerConfig): void {
+        const { title, position, info } = configs;
+        const marker = new google.maps.Marker({
             map: this._googleMapInstance,
             title,
             position,
+        });
+        const markerInfo = new google.maps.InfoWindow({
+            content: info,
+        });
+
+        marker.addListener('click', (event) => {
+            markerInfo.open(this._googleMapInstance, marker);
         });
     }
 }
