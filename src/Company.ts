@@ -1,4 +1,5 @@
 import faker from 'faker';
+import { Location } from './location';
 
 export class Company {
     private _name: string;
@@ -21,7 +22,7 @@ export class Company {
         return this._name;
     }
 
-    public get location(): { lat: number; lng: number } {
+    public get location(): Location {
         return this._location;
     }
 
@@ -29,10 +30,18 @@ export class Company {
         return this._catchPhrase;
     }
 
-    public companyInfo(): string {
+    public getInfo(): string {
         return `
             Company name: ${this._name}.
             Company catch phrase: ${this._catchPhrase}.
         `;
+    }
+
+    public getTitle(): string {
+        return this.name;
+    }
+
+    public getPosition(): Location {
+        return this.location;
     }
 }

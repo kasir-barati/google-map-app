@@ -1,8 +1,9 @@
 import faker from 'faker';
+import { Location } from './location';
 
 export class User {
     private _name: string;
-    private _location: { lng: number; lat: number };
+    private _location: Location;
 
     constructor() {
         this._name = faker.name.firstName();
@@ -16,14 +17,22 @@ export class User {
         return this._name;
     }
 
-    public get location(): { lat: number; lng: number } {
+    public get location(): Location {
         return this._location;
     }
 
-    public userInfo(): string {
+    public getInfo(): string {
         return `
             Hi.
             The user name is: ${this._name}.
         `;
+    }
+
+    public getTitle(): string {
+        return this.name;
+    }
+
+    public getPosition(): Location {
+        return this.location;
     }
 }

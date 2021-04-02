@@ -1,7 +1,9 @@
-interface MarkerConfig {
-    info: string;
-    title: string;
-    position: { lat: number; lng: number };
+import { Location } from './location';
+
+interface Mappable {
+    getInfo(): string;
+    getTitle(): string;
+    getPosition(): Location;
 }
 
 class CustomMap {
@@ -9,7 +11,7 @@ class CustomMap {
 
     constructor(
         _mapDiv: Element,
-        configs: { zoom: number; mapCenter: { lat: number; lng: number } }
+        configs: { zoom: number; mapCenter: Location }
     ) {
         const {
             zoom,
@@ -25,15 +27,14 @@ class CustomMap {
         });
     }
 
-    createMarker(configs: MarkerConfig): void {
-        const { title, position, info } = configs;
+    createMarker(mappable: Mappable): void {
         const marker = new google.maps.Marker({
             map: this._googleMapInstance,
-            title,
-            position,
+            title: mappable.getTitle(),
+            position: mappable.getPosition(),
         });
         const markerInfo = new google.maps.InfoWindow({
-            content: info,
+            content: mappable.getInfo(),
         });
 
         marker.addListener('click', (event) => {
