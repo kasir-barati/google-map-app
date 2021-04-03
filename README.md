@@ -19,7 +19,7 @@ then the parcel-bundler starts installing dependencies and then the app comes up
 
 # Overview
 
-![Overview](https://github.com/nodejsdeveloperskh/google-map-app/overview.png)
+![Overview](https://github.com/nodejsdeveloperskh/google-map-app/blob/main/overview.png)
 
 # Contribute
 
