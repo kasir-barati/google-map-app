@@ -17,6 +17,10 @@ A very simple app written in [TypeScript](https://www.typescriptlang.org/)
 
 then the parcel-bundler starts installing dependencies and then the app comes up on port 1234
 
+# Overview
+
+![Overview](https://github.com/nodejsdeveloperskh/google-map-app/overview.png)
+
 # Contribute
 
 -   fork it and create a pull request
